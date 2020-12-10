@@ -1,17 +1,17 @@
 # orbs:
 #   node: circleci/node@4.0.0
 
-version: 2.1
+# version: 2.1
 
-workflows:
-  app-tests:
-    jobs:
-      test:
-        docker:
-          - image: cimg/node:14.13.0
-        steps:
-          - checkout
-          - run: node --version
+# workflows:
+#   app-tests:
+jobs:
+  test:
+    docker:
+      - image: cimg/node:14.13.0
+    steps:
+      - checkout
+      - run: node --version
 #       - node/test
 
 # Generated from CircleCI
