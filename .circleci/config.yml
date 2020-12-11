@@ -7,8 +7,19 @@ workflows:
   test-deloy:
     jobs:
       - test
+  test-deploy2:
+    jobs:
+      - test2
       
 jobs:
+  test2:
+    docker:
+      - image: cimg/node:14.13.0
+    steps:
+      - checkout
+      - run: 
+          name: Run Tests
+          command: npm run test
   test:
     docker:
       - image: cimg/node:14.13.0
@@ -17,9 +28,6 @@ jobs:
       - run: 
           name: Install dependencies
           command: npm install
-      - run: 
-          name: Run Tests
-          command: npm run test
   #       - node/test
 
 # Generated from CircleCI
